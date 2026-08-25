@@ -1,0 +1,10 @@
+{
+  "id": "journal-desk",
+  "name": { "zh": "周期笔记台", "en": "Journal Desk" },
+  "icon": "calendar-days",
+  "version": "1.0.0",
+  "layout": {
+    "main": [{ "type": "plugin:journal-desk:calendar" }]
+  },
+  "requires": { "views": ["plugin:journal-desk:calendar"] }
+}

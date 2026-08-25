@@ -1,0 +1,73 @@
+{
+  "id": "journal-desk",
+  "name": "周期笔记台",
+  "nameEn": "Journal Desk",
+  "version": "1.1.0",
+  "apiVersion": 1,
+  "description": "把「日记」从孤零零的今天,扩成一条可前后走的时间轴:日 / 周 / 月 / 季 / 年五种周期笔记各有自己的路径格式与模板,命令面板一键去「今天 / 本周 / 本月」,「上一篇 / 下一篇」按当前打开的那篇的周期前后跳一格,状态栏一眼看出今天写了没,再加一张只回答「这天有没有日记」的月历。数据流向:周期笔记就是你自己笔记库里的普通 Markdown 文件(默认 Journal/…,路径完全由五条设置决定),可被双链引用、被全局搜索命中、被你随手改名搬家;插件不写工作文件夹、不存任何隐藏缓存文件、不联网、不调用任何 AI —— 「哪天写了」每次都从笔记路径现算。目标文件已经存在时一律直接打开,一个字节都不写。",
+  "descriptionEn": "Turns the daily note from a single isolated day into a timeline you can walk. Five periodic note kinds — daily, weekly, monthly, quarterly and yearly — each with its own path format and template. Jump to Today / This Week / This Month from the command palette; Previous / Next steps one slot at a time in whatever period the note you are reading belongs to. A status-bar item tells you at a glance whether today is written, and a month calendar answers exactly one question: did I journal that day? Where the data goes: periodic notes are ordinary Markdown files in your own vault (Journal/… by default, entirely determined by five settings), so they can be wiki-linked, searched and moved around freely. The plugin writes nothing to a work folder, keeps no hidden cache file, makes no network calls and uses no AI — the calendar marks are recomputed from note paths every time. If the target file already exists it is simply opened, never written to.",
+  "main": "main.js",
+  "events": [
+    { "name": "create", "label": "新建了一篇周期笔记" },
+    { "name": "open", "label": "打开了一篇周期笔记" }
+  ],
+  "onboarding": {
+    "intro": "周期笔记台 = 一条可前后走的日记时间轴:日 / 周 / 月 / 季 / 年各有自己的路径与模板,前后一格随手跳,外加一张「哪天写了」的月历。",
+    "steps": [
+      {
+        "title": "早上开工",
+        "description": "命令面板「周期笔记台:今天」,或点状态栏右下角那条「✎ 今天没写」。今天的日记不存在就按模板建一份并打开;已经存在就直接打开,一个字节都不写。"
+      },
+      {
+        "title": "前后翻",
+        "description": "正开着 Journal/2026-08-20.md,按「周期笔记台:上一篇」到 8-19;正开着 Journal/周/2026-W34.md,同一条命令跳到 W33 —— 跳的是「当前这篇的同类前一格」。认不出当前这篇是周期笔记时,回落成「昨天 / 明天」。"
+      },
+      {
+        "title": "做小结",
+        "description": "「周期笔记台:本周」/「本月」,或在日历视图右上角点「本周 / 本月 / 本季 / 本年」。这四个入口恒相对今天,不跟随当前打开的笔记。"
+      },
+      {
+        "title": "回看",
+        "description": "命令「周期笔记台:打开」进日历视图(或切到「周期笔记台」Space):有日记的日子下面有一个点,点它打开,点空白日子就按模板建当天。非本月的补格点了只切月份,不会误建文件。"
+      },
+      {
+        "title": "改路径与模板",
+        "description": "插件详情页有 10 条设置:五种周期各一条路径格式、各一条模板路径。路径格式里能用 {{date:FMT}} / {{week}} / {{quarter}},不用写 .md。模板是笔记库里的一条 .md 路径,只在建文件那一刻套一次,留空则新笔记只有一行标题。"
+      },
+      {
+        "title": "数据在哪",
+        "description": "全部在你自己的笔记库里,就是普通 Markdown 笔记(默认 Journal/、Journal/周/、Journal/月/、Journal/季/、Journal/年/)。插件不往「工作文件夹」写任何东西,也不存隐藏缓存;路径不随界面语言变。"
+      }
+    ],
+    "en": {
+      "intro": "Journal Desk = a journal timeline you can walk: daily, weekly, monthly, quarterly and yearly notes each with their own path and template, one-slot-at-a-time navigation, plus a calendar showing which days you wrote.",
+      "steps": [
+        {
+          "title": "Start the day",
+          "description": "Run \"Journal Desk: Today\" from the command palette, or click the \"✎ No journal yet\" item at the bottom right. If today's note does not exist it is created from your template and opened; if it already exists it is simply opened and nothing is written."
+        },
+        {
+          "title": "Step back and forth",
+          "description": "Reading Journal/2026-08-20.md? \"Journal Desk: Previous\" takes you to 08-19. Reading a weekly note? The same command goes to the previous week — it always steps one slot within the period of the note you are on. When the current note is not a periodic note, it falls back to yesterday / tomorrow."
+        },
+        {
+          "title": "Wrap up a period",
+          "description": "\"Journal Desk: This Week\" / \"This Month\", or the This Week / This Month / This Quarter / This Year buttons at the top of the calendar view. These four are always relative to today — they never follow the note you have open."
+        },
+        {
+          "title": "Look back",
+          "description": "Run \"Journal Desk: Open\" for the calendar view (or switch to the Journal Desk Space). Days with a journal carry a dot: click one to open it, click an empty day to create it from the template. Clicking a filler day from an adjacent month only switches the month — it never creates a file by accident."
+        },
+        {
+          "title": "Paths and templates",
+          "description": "The plugin detail page has ten settings: a path format and a template path for each of the five periods. Path formats accept {{date:FMT}}, {{week}} and {{quarter}}, and you do not write .md yourself. A template is a .md path in your vault, applied once at creation time; leave it empty and a new note gets just a title line."
+        },
+        {
+          "title": "Where the data lives",
+          "description": "All of it is in your own vault as ordinary Markdown notes (Journal/, Journal/周/, Journal/月/, Journal/季/, Journal/年/ by default). The plugin writes nothing to a work folder and keeps no hidden cache, and the paths never change with the interface language."
+        }
+      ]
+    },
+    "settings": true
+  }
+}
