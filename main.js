@@ -759,13 +759,13 @@ const STYLE = `
 .jd-nav{display:flex;align-items:center;gap:6px}
 .jd-per{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .jd-month{min-width:126px;text-align:center;font-size:14px;font-weight:600;color:var(--jd-text,var(--text,#1c1c1c))}
-.jd-btn{padding:4px 11px;font:inherit;font-size:12px;color:var(--jd-text,var(--text,#1c1c1c));border:1px solid var(--jd-border,var(--border,#eae9e7));border-radius:9px;background:var(--jd-surf,var(--bg-card,#fdfdfc));cursor:pointer;white-space:nowrap}
+.jd-btn{padding:4px 11px;font:inherit;font-size:12px;color:var(--jd-text,var(--text,#1c1c1c));border:1px solid var(--jd-border,var(--border,#eae9e7));border-radius:var(--radius-sm);background:var(--jd-surf,var(--bg-card,#fdfdfc));cursor:pointer;white-space:nowrap}
 .jd-btn:hover{border-color:var(--jd-accent,var(--accent,#1c1c1c))}
 .jd-btn.on{background:var(--jd-accent-soft,var(--accent-light,#eee));border-color:transparent;color:var(--jd-accent-ink,var(--accent,#1c1c1c))}
 .jd-path{font-size:11.5px;color:var(--jd-muted,var(--text-muted,#5f5f5d));word-break:break-all}
 .jd-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
 .jd-wd{text-align:center;font-size:11px;color:var(--jd-muted,var(--text-muted,#5f5f5d));padding:2px 0}
-.jd-cell{position:relative;height:46px;border:1px solid transparent;border-radius:10px;background:var(--jd-surf,var(--bg-card,#fdfdfc));color:var(--jd-text,var(--text,#1c1c1c));font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0}
+.jd-cell{position:relative;height:46px;border:1px solid transparent;border-radius:var(--radius-sm);background:var(--jd-surf,var(--bg-card,#fdfdfc));color:var(--jd-text,var(--text,#1c1c1c));font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0}
 .jd-cell:hover{border-color:var(--jd-accent,var(--accent,#1c1c1c))}
 .jd-cell.out{background:var(--jd-bg,var(--bg,#f8f7f6));color:var(--jd-muted,var(--text-muted,#5f5f5d));opacity:.82}
 .jd-cell.today{background:var(--jd-accent-soft,var(--accent-light,#eee));color:var(--jd-accent-ink,var(--accent,#1c1c1c));font-weight:600}
